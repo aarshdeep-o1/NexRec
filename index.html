@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NexRec - Cyberpunk AI Product Recommendation System and E-commerce Analytics dashboard. Powered by HTML, CSS, and JS.">
+    <title>NexRec | AI Product Recommendation System</title>
+    
+    <!-- Core Style Sheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons helper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Animated Canvas Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Ambient Neon Glowing Orbs -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-bottom-right"></div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-wand-magic-sparkles glow-text-blue"></i>
+            🌌 NexRec
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Portal</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#recommendations">AI Engine</a></li>
+            <li><a href="#sandbox">SQL Sandbox</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+        </ul>
+        <div style="display:flex; align-items:center; gap: 15px;">
+            <button id="theme-toggle-btn" class="chart-btn" style="padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; border-color: rgba(191, 0, 255, 0.3); display: flex; align-items: center;">
+                <i class="fa-solid fa-moon glow-text-purple"></i> <span id="theme-label" style="margin-left: 5px;">Dark Mode</span>
+            </button>
+            <div class="header-status">
+                <span class="pulse-dot"></span>
+                AI PIPELINE ACTIVE
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h3>🌌 NexRec</h3>
+                <h1>AI Product Recommendation System</h1>
+                <p>Smart AI recommendations for better shopping experiences</p>
+                <div class="hero-buttons">
+                    <a href="#recommendations" class="cyber-btn cyber-btn-active">Launch ML Engine</a>
+                    <a href="#analytics" class="cyber-btn cyber-btn-purple">View Telemetry</a>
+                </div>
+            </div>
+            
+            <!-- 3D Glowing Glassmorphism Cube -->
+            <div class="hero-visual">
+                <div class="holo-cube-container">
+                    <div class="holo-rings"></div>
+                    <div class="holo-cube">
+                        <div class="cube-face cube-face-front"></div>
+                        <div class="cube-face cube-face-back"></div>
+                        <div class="cube-face cube-face-right"></div>
+                        <div class="cube-face cube-face-left"></div>
+                        <div class="cube-face cube-face-top"></div>
+                        <div class="cube-face cube-face-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Features Cards Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h3>Intelligence System</h3>
+            <h2>Engine Modules & Capabilities</h2>
+            <p>Engineered for modularity and high-speed analytical calculations across database records.</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Card 1 -->
+            <div class="glass-card feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>Product Recommendation Engine</h3>
+                <p>Content-based TF-IDF tag scoring combined with Cosine Similarity algorithms to compute hyper-targeted products.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass-card feature-card feature-card-purple">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-users-gear"></i>
+                </div>
+                <h3>Customer Behavior Analytics</h3>
+                <p>Hierarchical grouping, cohort segments, and lifetime value modeling based on demographic clusters.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass-card feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <h3>Trending Products</h3>
+                <p>Real-time telemetry tracking velocity metrics and sales volume to surface hot products on the fly.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="glass-card feature-card feature-card-purple">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Sales Insights</h3>
+                <p>Time-series forecasting models predicting transaction frequency patterns and seasonal revenue peaks.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="glass-card feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <h3>Rating Analysis</h3>
+                <p>NLP sentiment index extraction from product customer review matrices, scoring buyer satisfaction dynamically.</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="glass-card feature-card feature-card-purple">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3>Personalized Suggestions</h3>
+                <p>AI-driven hyper-customized interface adapts search lists based on historic session telemetry and segment affinity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Analytics Dashboard -->
+    <section class="dashboard-sec" id="analytics">
+        <div class="section-header">
+            <h3>Live Telemetry</h3>
+            <h2>Commerce Analytics Center</h2>
+            <p>Interactive telemetry tracking performance statistics, customer conversion indexes, and product ratings.</p>
+        </div>
+
+        <!-- Metric KPI Cards -->
+        <div class="stats-grid">
+            <div class="glass-card stat-card">
+                <div class="stat-label">Total Sales</div>
+                <div class="stat-number">$114,845.20</div>
+                <div class="stat-trend trend-up"><i class="fa-solid fa-circle-chevron-up"></i> +12.4% this month</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-label">Active Recommenders</div>
+                <div class="stat-number">40 Nodes</div>
+                <div class="stat-trend trend-up"><i class="fa-solid fa-circle-chevron-up"></i> Sync Active</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-label">Click-Through Rate (CTR)</div>
+                <div class="stat-number">14.8%</div>
+                <div class="stat-trend trend-up"><i class="fa-solid fa-circle-chevron-up"></i> +2.1% performance</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-label">Cosine Precision</div>
+                <div class="stat-number">99.8%</div>
+                <div class="stat-trend" style="color: var(--neon-teal);"><i class="fa-solid fa-circle-check"></i> ML Engine Optimal</div>
+            </div>
+        </div>
+
+        <!-- Visual Analytics Charts Grid -->
+        <div class="charts-grid-3">
+            <!-- Chart 1: Sales Trend -->
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <div class="chart-title"><i class="fa-solid fa-chart-line glow-text-blue"></i> Sales Trend (Monthly)</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="sales-trend-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Customer Segment -->
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <div class="chart-title"><i class="fa-solid fa-chart-pie glow-text-purple"></i> Customer Segments</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="segment-pie-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 3: Top Products -->
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <div class="chart-title"><i class="fa-solid fa-fire-flame-curved glow-text-blue"></i> Top Products (Sales Volume)</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="top-products-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 4: Revenue by Location -->
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <div class="chart-title"><i class="fa-solid fa-map-location-dot glow-text-purple"></i> Revenue by Location</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="location-revenue-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 5: Rating Distribution -->
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <div class="chart-title"><i class="fa-solid fa-star-half-stroke glow-text-blue"></i> Rating Distribution</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="rating-dist-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 6: Cosine Similarity Scores -->
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <div class="chart-title"><i class="fa-solid fa-circle-nodes glow-text-purple"></i> Cosine Similarity Scores</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="cosine-sim-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: AI Product Recommendations Playground -->
+    <section class="recommendation-sec" id="recommendations">
+        <div class="section-header">
+            <h3>Machine Learning Playground</h3>
+            <h2>AI Recommendation System</h2>
+            <p>Select a seed product from our digital inventory table. The browser client will compute term-frequency TF-IDF vectors and calculate similarity scores instantaneously.</p>
+        </div>
+
+        <div class="playground-grid">
+            <!-- Selection Controls -->
+            <div class="glass-card control-panel">
+                <h3 style="font-size: 1.15rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; margin-bottom: 10px;">
+                    <i class="fa-solid fa-sliders glow-text-blue"></i> Match Controls
+                </h3>
+                
+                <div class="form-group">
+                    <label for="seed-product-select">Target Seed Product</label>
+                    <select id="seed-product-select" class="form-select">
+                        <!-- Populated by app.js -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="match-depth-select">Similarity Depth</label>
+                    <select id="match-depth-select" class="form-select">
+                        <option value="3">Top 3 Matches (Recommended)</option>
+                        <option value="2">Top 2 Matches</option>
+                        <option value="1">Absolute Best Match</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Vector Space Filter</label>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.15); padding: 12px; border-radius: 8px; line-height: 1.4;">
+                        <i class="fa-solid fa-circle-nodes glow-text-blue"></i> Algorithm: TF-IDF Tag Similarity + Angular Distance Matcher
+                    </div>
+                </div>
+
+                <button id="trigger-recommend-btn" class="cyber-btn cyber-btn-active" style="margin-top: 10px; width: 100%;">
+                    Compute AI Cosine Matches
+                </button>
+            </div>
+
+            <!-- Recommendation display grid -->
+            <div class="recs-display">
+                <div class="recs-header-info">
+                    <h3 style="font-size:1.15rem;"><i class="fa-solid fa-network-wired glow-text-purple"></i> Recommendations Output</h3>
+                    <div style="font-size:0.8rem; color:var(--text-secondary);">Output Precision: <span class="glow-text-blue">99.8%</span></div>
+                </div>
+                <div id="recommendations-grid" class="recs-grid">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SQL Sandbox & Code Preview -->
+    <section class="sandbox-sec" id="sandbox">
+        <div class="section-header">
+            <h3>Database Integration</h3>
+            <h2>Cortical SQL Sandbox & Code Previewer</h2>
+            <p>Execute relational SQL queries on database models or preview source code components of our pipeline.</p>
+        </div>
+
+        <div class="sandbox-grid">
+            <!-- SQL Console Simulator -->
+            <div class="glass-card terminal-card">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-dot dot-red"></span>
+                        <span class="terminal-dot dot-yellow"></span>
+                        <span class="terminal-dot dot-green"></span>
+                    </div>
+                    <div class="terminal-title">SQL RELATIONAL TERMINAL</div>
+                    <div><i class="fa-solid fa-database" style="color: var(--text-secondary); font-size: 0.8rem;"></i></div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div><span style="color: #bf00ff;">nexrec-root@ai-core:~$</span> <span style="color: #00f0ff;">sqlite3 nexrec.db</span></div>
+                    <div style="color: var(--text-secondary); font-size: 0.8rem;">Welcome to the SQLite simulation console. Click one of the pre-set query modules below to test SQL queries.</div>
+                    <div><span style="color: #bf00ff;">nexrec-root@ai-core:~$</span> <span class="blink-cursor">_</span></div>
+                </div>
+                <div style="padding: 15px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                    <h4 style="font-size:0.8rem; margin-bottom:10px; color:var(--text-secondary); text-transform:uppercase;">Pre-set Query Modules:</h4>
+                    <div class="terminal-cmd-list">
+                        <div class="terminal-cmd-item" data-query="SELECT product_id, name, price, rating FROM products WHERE price > 500 ORDER BY price DESC;" data-target="products">
+                            <i class="fa-solid fa-code"></i> Filter Premium Hardware products (price > $500)
+                        </div>
+                        <div class="terminal-cmd-item" data-query="SELECT segment, COUNT(*) AS user_count FROM customers GROUP BY segment;" data-target="customers">
+                            <i class="fa-solid fa-code"></i> Group Customers by segment demographics
+                        </div>
+                        <div class="terminal-cmd-item" data-query="SELECT p.name, SUM(t.amount) AS total_sales, COUNT(t.transaction_id) AS units_ordered FROM transactions t JOIN products p ON t.product_id = p.product_id GROUP BY p.name ORDER BY total_sales DESC LIMIT 3;" data-target="trending">
+                            <i class="fa-solid fa-code"></i> Get top 3 revenue-generating trending products
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipeline Code Viewer -->
+            <div class="glass-card terminal-card" style="border-color: rgba(0, 240, 255, 0.25); box-shadow: 0 0 30px rgba(0, 240, 255, 0.08);">
+                <div class="terminal-header" style="border-bottom-color: rgba(0, 240, 255, 0.15);">
+                    <div class="terminal-buttons">
+                        <span class="terminal-dot dot-red"></span>
+                        <span class="terminal-dot dot-yellow"></span>
+                        <span class="terminal-dot dot-green"></span>
+                    </div>
+                    <div class="terminal-title" id="code-title">PYTHON PIPELINE INTERACTION</div>
+                    <div><i class="fa-solid fa-code-branch" style="color: var(--text-secondary); font-size: 0.8rem;"></i></div>
+                </div>
+                <div class="terminal-body" style="color: #00f0ff; height: 490px;">
+                    <pre><code id="code-block-element" style="font-family: 'Courier New', Courier, monospace; font-size: 0.78rem; line-height: 1.45; white-space: pre-wrap;">import pandas as pd
+import sqlite3
+
+def clean_sales_records(db_path="nexrec.db"):
+    # Connect to local SQLite analytics db
+    conn = sqlite3.connect(db_path)
+    
+    # Extract transaction logs for model processing
+    df = pd.read_sql_query("""
+        SELECT transaction_id, customer_id, product_id, amount, timestamp 
+        FROM transactions
+    """, conn)
+    
+    # Process outliers and format dates
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    df['revenue_clean'] = df['amount'].clip(lower=0)
+    
+    conn.close()
+    return df</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Tech Stack Grid -->
+    <section class="tech-stack" id="tech">
+        <div class="section-header">
+            <h3>Technological Backbone</h3>
+            <h2>Supported Pipeline Stack</h2>
+            <p>Click on any technological card node below to display its actual python/SQL integration snippet in the viewer above.</p>
+        </div>
+
+        <div class="tech-grid">
+            <div class="glass-card tech-card" data-tech="python">
+                <img src="https://img.icons8.com/color/96/python--v1.png" alt="Python" class="tech-logo">
+                <span>Python Core</span>
+            </div>
+            <div class="glass-card tech-card tech-card-purple" data-tech="sql">
+                <img src="https://img.icons8.com/external-flat-juicy-fish/96/external-sql-coding-and-development-flat-juicy-fish.png" alt="SQL" class="tech-logo">
+                <span>Relational SQL</span>
+            </div>
+            <div class="glass-card tech-card" data-tech="streamlit">
+                <img src="https://img.icons8.com/color/96/arrow.png" alt="Streamlit" class="tech-logo">
+                <span>Streamlit App</span>
+            </div>
+            <div class="glass-card tech-card tech-card-purple" data-tech="scikit">
+                <img src="https://img.icons8.com/color/96/brainstorming.png" alt="Scikit-learn" class="tech-logo">
+                <span>Scikit-Learn</span>
+            </div>
+            <!-- Power BI Card (Linked visualization showcase representation) -->
+            <div class="glass-card tech-card" onclick="alert('Power BI Neural Dashboard report simulated! Embedded within high-fidelity Canvas elements.')" style="border-style: dashed; border-color: rgba(255, 183, 0, 0.45);">
+                <img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI" class="tech-logo">
+                <span style="color: var(--neon-gold);">Power BI Active</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Section -->
+    <footer style="padding: 40px 8% 30px 8%; text-align: center; border-top: 1px solid var(--border-glass); background: #04030a;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 5px; color: var(--text-primary); letter-spacing: 1px; font-weight: 800;">🌌 NexRec</h2>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 18px; font-weight: 500;">Aarshdeep Kaur | B.Tech (Data Science)</p>
+        <a href="https://linkedin.com/in/aarshdeepkaur" target="_blank" class="chart-btn" style="padding: 8px 18px; font-size: 0.85rem; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-color: rgba(0, 240, 255, 0.3); color: var(--neon-blue); transition: var(--transition-smooth); background: rgba(0, 240, 255, 0.05); font-family: var(--font-heading); font-weight: 600;">
+            <i class="fa-brands fa-linkedin" style="font-size: 1.05rem;"></i> LinkedIn Profile
+        </a>
+    </footer>
+
+    <!-- AI Chatbot Floating Widget -->
+    <div id="ai-chatbot-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; font-family: var(--font-body);">
+        <!-- Chatbot Toggle Button -->
+        <button id="chatbot-toggle-btn" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple)); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(191, 0, 255, 0.6); color: #fff; font-size: 1.6rem; transition: var(--transition-smooth);">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+        
+        <!-- Chat Window (Hidden by default) -->
+        <div id="chat-window" class="glass-card" style="position: absolute; bottom: 80px; right: 0; width: 350px; height: 450px; display: none; flex-direction: column; padding: 0; overflow: hidden; border: 1px solid rgba(191, 0, 255, 0.3); box-shadow: 0 10px 40px rgba(0,0,0,0.8); z-index: 999; transition: var(--transition-smooth);">
+            <!-- Chat Header -->
+            <div style="background: linear-gradient(90deg, rgba(7, 5, 16, 0.95), rgba(19, 13, 48, 0.95)); padding: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: space-between;">
+                <div style="display:flex; align-items:center; gap: 10px;">
+                    <i class="fa-solid fa-robot glow-text-blue" style="font-size: 1.2rem;"></i>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.9rem; color: #fff;">Neural Advisor</div>
+                        <div style="font-size: 0.7rem; color: var(--neon-teal); display: flex; align-items: center; gap: 4px;">
+                           <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--neon-teal); display: inline-block;"></span> Active Cortex
+                        </div>
+                    </div>
+                </div>
+                <button id="chat-close-btn" style="background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 1rem;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <!-- Chat Messages Panel -->
+            <div id="chat-messages" style="flex-grow: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: rgba(5, 3, 12, 0.95); font-size: 0.85rem;">
+                <div style="align-self: flex-start; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-glass); border-radius: 12px 12px 12px 0px; padding: 10px 14px; max-width: 85%; color: var(--text-primary); line-height: 1.4;">
+                    Greetings, traveler. I am the NexRec **Neural Advisor**, a trained AI assistant. How can I guide your e-commerce operations today?
+                </div>
+            </div>
+            
+            <!-- Chat Quick Suggestions (Clickable format) -->
+            <div style="padding: 8px 15px; background: rgba(5, 3, 12, 0.95); border-top: 1px solid rgba(255, 255, 255, 0.04); display: flex; flex-wrap: wrap; gap: 6px;">
+                <button class="chat-suggest-btn" style="background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 20px; color: var(--neon-blue); padding: 4px 10px; font-size: 0.72rem; cursor: pointer; transition: var(--transition-smooth); font-family: var(--font-heading);" data-msg="Recommend a Wearable">🕶️ Wearables</button>
+                <button class="chat-suggest-btn" style="background: rgba(191, 0, 255, 0.08); border: 1px solid rgba(191, 0, 255, 0.2); border-radius: 20px; color: var(--neon-purple); padding: 4px 10px; font-size: 0.72rem; cursor: pointer; transition: var(--transition-smooth); font-family: var(--font-heading);" data-msg="Top Selling Product">🔥 Top Sellers</button>
+                <button class="chat-suggest-btn" style="background: rgba(0, 255, 196, 0.08); border: 1px solid rgba(0, 255, 196, 0.2); border-radius: 20px; color: var(--neon-teal); padding: 4px 10px; font-size: 0.72rem; cursor: pointer; transition: var(--transition-smooth); font-family: var(--font-heading);" data-msg="System pipeline check">⚡ Pipeline Check</button>
+            </div>
+            
+            <!-- Chat Input Bar -->
+            <div style="padding: 12px; background: rgba(7, 5, 16, 0.98); border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; gap: 8px;">
+                <input id="chat-input" type="text" placeholder="Query Neural network..." style="flex-grow: 1; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); border-radius: 6px; padding: 8px 12px; color: #fff; font-size: 0.8rem; outline: none;" />
+                <button id="chat-send-btn" style="background: var(--neon-blue); border: none; border-radius: 6px; width: 35px; height: 32px; color: var(--bg-dark); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: var(--transition-smooth);"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
